@@ -1,8 +1,10 @@
 @import 'https://fonts.googleapis.com/css?family=Raleway';
+
+
 /*  body and videos */
 body  {
   font-family: 'Play', sans-serif;
-	margin: 0;
+	/* margin: 0; */
 }
 #video-background {
   position: fixed;
@@ -29,7 +31,7 @@ body  {
 {
     font-family: Raleway;
     text-align: center;
-    padding: 15px;;
+    padding: .5em;
     
     
 }
@@ -38,9 +40,9 @@ body  {
 {
     color:white;
     text-decoration: none;
-    font: 20px Raleway;
-    margin: 1px 5px;
-    padding: 9px ;
+    font: 1em Raleway;
+    margin: .1em .3em;
+    padding: .5em ;
     position: relative;
     z-index: 0;
     cursor: pointer;
@@ -52,7 +54,7 @@ div.nav a:before, div.nav a:after
     position: absolute;
     opacity: 0.4;
     height: 100%;
-    width: 2px;
+    width: .1em;
     content: '';
     background:white;
     transition: all 0.3s;
@@ -73,7 +75,7 @@ div.nav a:before, div.nav a:after
 .n a:hover:before,.n a:hover:after
 {
     opacity: 1;
-    height: 2px;
+    height: .2em;
     width: 100%;
 }
 .n a:before,.n a:after
@@ -81,7 +83,7 @@ div.nav a:before, div.nav a:after
     position: absolute;
     opacity: 0.1;
     width: 0%;
-    height: 2px;
+    height: .1em;
     content: '';
     background: white;
     transition: all 0.3s;
@@ -116,12 +118,12 @@ div.nav a:before, div.nav a:after
   .icon-bar a {
     display: block;
     text-align: center;
-    padding: 15px;
-    margin: 4px;
-    border-radius: 15px;
+    padding: .7em;
+    margin: .2em;
+    border-radius: .8em;
     transition: all 0.3s ease;
     color: white;
-    font-size: 20px;
+    font-size: 1.4em;
   }
   
   .icon-bar a:hover {
@@ -170,6 +172,6 @@ div.nav a:before, div.nav a:after
   }
   
   .content {
-    margin-left: 10px;
-    font-size: 30px;
+    margin-left: 1vh;
+    font-size: 2vh;
   }
