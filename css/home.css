@@ -2,16 +2,29 @@
 
 
 /*  body and videos */
-body  {
+
+body,html{
+  display: block;
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  top:0;
+  right: 0;
+  bottom: 0;
+  left: 0;;
   font-family: 'Play', sans-serif;
-	/* margin: 0; */
 }
+
 #video-background {
-  position: fixed;
+  display: block;
+  position:fixed;
+  background-size: cover;
   width: auto; 
   height: auto;
   z-index: -100;
   top:0;
+  right: 0;
+  left: 0;
   
 }
 /*  logo  */
@@ -28,10 +41,13 @@ body  {
 
 /* Nav */
 .nav
-{
-    font-family: Raleway;
-    text-align: center;
-    padding: .5em;
+{ 
+  position: fixed;
+  right: 0;
+  left: 0;
+  font-family: Raleway;
+  text-align: center;
+  padding: .6em;
     
     
 }
@@ -40,7 +56,7 @@ body  {
 {
     color:white;
     text-decoration: none;
-    font: 1em Raleway;
+    font: 1.5em Raleway;
     margin: .1em .3em;
     padding: .5em ;
     position: relative;
