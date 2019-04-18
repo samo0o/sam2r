@@ -1,0 +1,317 @@
+@import 'https://fonts.googleapis.com/css?family=Raleway';
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+
+body{
+  background: #222;
+	height: 100%;
+	overflow-x: hidden;
+	margin: 0 auto;
+}
+
+
+/* nav */
+  
+.nav
+{
+    font-family: Raleway;
+  	padding: 2em;
+    text-align: center;
+    
+}
+
+.nav a
+{
+    color:white;
+    text-decoration: none;
+    font: 20px Raleway;
+    margin: 2px 10px;
+    padding: 9px ;
+    position: relative;
+    z-index: 0;
+    cursor: pointer;
+
+
+}
+div.nav a:before, div.nav a:after
+{
+    position: absolute;
+    opacity: 0.4;
+    height: 100%;
+    width: 2px;
+    content: '';
+    background:rgb(233, 233, 233);
+    transition: all 0.3s;
+}
+
+.n a:before
+{
+    left: 0px;
+    top: 0px;
+}
+
+.n a:after
+{
+    right: 0px;
+    bottom: 0px;
+}
+
+.n a:hover:before,.n a:hover:after
+{
+    opacity: 1;
+    height: 2px;
+    width: 100%;
+}
+.n a:before,.n a:after
+{
+    position: absolute;
+    opacity: 0.1;
+    width: 0%;
+    height: 2px;
+    content: '';
+    background: rgb(255, 255, 255);
+    transition: all 0.3s;
+}
+
+.n a:before
+{
+    left: 0px;
+    top: 0px;
+}
+
+.n a:after
+{
+    right: 0px;
+    bottom: 0px;
+}
+
+.n a:hover:before,.n a:hover:after
+{
+    opacity: 1;
+    width: 100%;
+}
+/* Icon */
+.icon-bar {
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+  
+  .icon-bar a {
+    display: block;
+    text-align: center;
+    padding: 15px;
+    margin: 4px;
+    border-radius: 15px;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 20px;
+  }
+  
+  .icon-bar a:hover {
+    background-color: black ;
+    color: red;
+  }
+  
+  .facebook {
+    background: #3B5998;
+    color: white;
+  }
+  
+  .twitter {
+    background: #55ACEE;
+    color: white;
+  }
+  
+  .google {
+    background: #dd4b39;
+    color: white;
+  }
+  
+  .linkedin {
+    background: #007bb5;
+    color: white;
+  }
+  
+  .youtube {
+    background: #bb0000;
+    color: white;
+  }
+  
+  .content {
+    margin-left: 10px;
+    font-size: 30px;
+  }
+
+   
+  .videos{
+    width: 50%;
+    height: 100%;
+    margin-left: 25%;
+    margin-top: 5%;
+
+
+  }
+
+  /* coming */
+  @import url('https://fonts.googleapis.com/css?family=Luckiest+Guy');
+
+.wrap {
+	width: 367px;
+	height: 100px;
+	position: fixed;
+  left: 50%;
+  bottom: -2%;
+	transform: translate(-50%, -50%);
+}
+
+h1 {
+	width: fit-content;
+	position: absolute;
+	font-size: 2em; 
+  background-color: black; 
+  padding: .5em;
+  color: white;
+  mix-blend-mode: multiply;
+  display: inline-block;
+	font-family: 'Luckiest Guy', cursive;
+	letter-spacing: 2px;
+	bottom: 0;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.ball {
+	width: 60px; 
+	height: 60px;
+	border-radius: 50%;
+	background: rgb(68,151,255);
+background: linear-gradient(142deg, rgba(68,151,255,1) 0%, rgba(85,34,222,1) 58%, rgba(156,33,231,1) 100%);
+	position: absolute;
+	bottom: -50px;
+	left: 42%;
+	animation-name: ball-go;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animation-timing-function: ease-in-out;
+	animation-direction: alternate;
+}
+
+@keyframes ball-go {
+	0% {
+		top: -200px;
+		left: 42%;
+	}
+	100% {
+		top: 92px;
+		left: 42%;
+	}
+}
+
+
+
+ /* scroll */ /* 
+.scroll{
+  margin:20%; 
+}
+ @import url(https://fonts.googleapis.com/css?family=Josefin+Sans:300,400);
+
+section {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  
+}
+section::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 80%;
+  background: -webkit-linear-gradient(top,rgba(0,0,0,0) 0,rgba(0,0,0,.8) 80%,rgba(0,0,0,.8) 100%);
+  background: linear-gradient(to bottom,rgba(0,0,0,0) 0,rgba(0,0,0,.8) 80%,rgba(0,0,0,.8) 100%);
+}
+
+
+.demo a {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  z-index: 2;
+  display: inline-block;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  color: #fff;
+  font : normal 400 20px/1 'Josefin Sans', sans-serif;
+  letter-spacing: .1em;
+  text-decoration: none;
+  transition: opacity .3s;
+}
+.demo a:hover {
+  opacity: .5;
+}
+
+
+
+
+#section01 a {
+  padding-top: 80px;
+}
+#section01 a span {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  margin-left: -12px;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-animation: sdb07 2s infinite;
+  animation: sdb07 2s infinite;
+  opacity: 0;
+  box-sizing: border-box;
+}
+#section01 a span:nth-of-type(1) {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+}
+#section01 a span:nth-of-type(2) {
+  top: 16px;
+  -webkit-animation-delay: .15s;
+  animation-delay: .15s;
+}
+#section01 a span:nth-of-type(3) {
+  top: 32px;
+  -webkit-animation-delay: .3s;
+  animation-delay: .3s;
+}
+@-webkit-keyframes sdb07 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes sdb07 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+ */
