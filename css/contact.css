@@ -1,7 +1,7 @@
 .nav
 {
     font-family: Raleway;
-  	padding: 2em;
+  	padding: 1em;
     text-align: center;
     
     
@@ -11,7 +11,8 @@
 {
     color:black;
     text-decoration: none;
-    font: 20px Raleway;
+    font: 15px Raleway bold;
+    
     margin: 2px 10px;
     padding: 9px ;
     position: relative;
@@ -149,7 +150,7 @@ div.nav a:before, div.nav a:after
 
   /* samer */
 .sa{
-    position: fixed;
+    position: absolute;
     top:10%;
     text-decoration: none;
     text-align: center;
@@ -169,7 +170,7 @@ div.nav a:before, div.nav a:after
   }
 .contact h1 {
     margin-bottom: 40px;
-    font-size: 4em;
+    font-size: 3em;
     text-transform: uppercase;
     font-family: 'Lato', sans-serif;
     font-weight: 100;
