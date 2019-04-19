@@ -11,16 +11,18 @@ body{
 .nav
 {
     font-family: Raleway;
-  	padding: 1.4em;
+  	padding: 1em;
     text-align: center;
+    
     
 }
 
 .nav a
 {
-    color:white;
+    color:black;
     text-decoration: none;
-    font: 20px Raleway;
+    font: 15px Raleway bold;
+    
     margin: 2px 10px;
     padding: 9px ;
     position: relative;
@@ -204,7 +206,6 @@ background: linear-gradient(142deg, rgba(68,151,255,1) 0%, rgba(85,34,222,1) 58%
      
 	}
 }
-
 
 
 
