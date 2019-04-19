@@ -197,11 +197,11 @@ background: linear-gradient(142deg, rgba(68,151,255,1) 0%, rgba(85,34,222,1) 58%
 
 @keyframes ball-go {
 	0% {
-		top: -13px;
+		top: -16px;
 		left: 62%;
 	}
 	100% {
-		top: -13px;
+		top: -16px;
     left: 30%;
      
 	}
