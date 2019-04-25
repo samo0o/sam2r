@@ -1016,32 +1016,32 @@ input[data-description="2019"]:checked ~ #timeline-descriptions-wrapper p[data-d
 .boot {
   width: 80%; 
   background-color: #808080;
-  animation: php 2s ease-out;
+  animation: boot 2s ease-out;
 }
 .node {
   width: 45%; 
   background-color: #e61717;
-  animation: php 2s ease-out;
+  animation: node 2s ease-out;
 }
 .react {
   width: 60%; 
   background-color: #d822b1;
-  animation: php 2s ease-out;
+  animation: react 2s ease-out;
 }
 .arb {
   width: 100%; 
   background-color: #b47098;
-  animation: php 2s ease-out;
+  animation: arb 2s ease-out;
 }
 .eng {
   width: 60%; 
   background-color: #75c3e2;
-  animation: php 2s ease-out;
+  animation: eng 2s ease-out;
 }
 .ger {
   width: 50%; 
   background-color: #d85c22;
-  animation: php 2s ease-out;
+  animation: ger 2s ease-out;
 }
 @keyframes html5 {
   0% {
@@ -1115,7 +1115,22 @@ input[data-description="2019"]:checked ~ #timeline-descriptions-wrapper p[data-d
     width: 50%;
   }
 }
+/* footer */
 
-footer{
-	padding: 5em
+#sticky {
+  width:100%;
+	padding:20px;
+	margin-top: 3em;
+  padding-bottom:16px;
+  color:white;
+  font-weight:bold;
+  font-size:18px;
+  text-align:center;
+  bottom:0;        
+	left:0; 
+	top:5px;     
+  
+  /*EFFECTS*/
+  border-top:1px solid whitesmoke;
+  background-image:url(http://rs257.pbsrc.com/albums/hh234/tfm448/Snow411.gif~c200)
 }
