@@ -5,7 +5,6 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>SaMeR</title>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="./css/home.css" />
     <!-- logo -->
@@ -15,7 +14,7 @@
 </head>
 
 <body>
-
+    <!-- nav star -->
     <header>
         <div class="nav n">
             <a href="./html/aboutme.html">ABOUT</a>
@@ -23,158 +22,183 @@
             <a href="./html/contact.html">CONTACT</a>
         </div>
     </header>
-    <video autoplay loop id="video-background" muted>
-        <source src="./videos/fier.mp4" video/mp4"> </video> <!-- <audio autoplay
-            src="../mus/Wedding Background Music _ Romantic and Inspiratio - by AS.mp3"></audio> -->
+    <!-- nav end -->
 
-        <!-- logo -->
 
-        <a href="./index.html" class="logo">
-            <span class="m1 big">SaMeR</span>
-            <span class="m2 big"> IshMaWi</span>
-        </a>
-        <script src="./js/logo-home.js"></script>
-                                       
-        <audio autoplay src="../mus/Wedding Background Music _ Romantic and Inspiratio - by AS.mp3"></audio>
-        <!-- icon bar -->
-        <div class="icon-bar">
-            <a href="https://www.facebook.com/" class="facebook"><i class="fa fa-facebook"></i></a>
-            <a href="https://twitter.com/" class="twitter"><i class="fa fa-twitter"></i></a>
-            <a href="https://www.google.com/" class="google"><i class="fa fa-google"></i></a>
-            <a href="https://www.linkedin.com/" class="linkedin"><i class="fa fa-linkedin"></i></a>
-            <a href="https://www.youtube.com/" class="youtube"><i class="fa fa-youtube"></i></a>
-        </div>
+    <!-- video star-->
 
-        <script src="./js/mouw-home.js"></script>
-        <script>
-            function Particle(x, y, radius) {
-                this.init(x, y, radius);
+    <video autoplay loop id="video-background" muted source src="./videos/fier.mp4" type="video/mp4">
+    </video>
+
+    <!-- video  end-->
+
+    <!-- audio star -->
+    <audio autoplay src="../mus/Wedding Background Music _ Romantic and Inspiratio - by AS.mp3"></audio>
+
+    <!-- audio end -->
+
+
+    <!-- logo star-->
+
+    <a href="./index.html" class="logo">
+        <span class="m1 big">SaMeR</span>
+        <span class="m2 big"> IshMaWi</span>
+    </a>
+    <script src="./js/logo-home.js"></script>
+
+    <!-- logo end -->
+
+    <!-- icon bar star-->
+
+    <div class="icon-bar">
+        <a href="https://www.facebook.com/" class="facebook"><i class="fa fa-facebook"></i></a>
+        <a href="https://twitter.com/" class="twitter"><i class="fa fa-twitter"></i></a>
+        <a href="https://www.google.com/" class="google"><i class="fa fa-google"></i></a>
+        <a href="https://www.linkedin.com/" class="linkedin"><i class="fa fa-linkedin"></i></a>
+        <a href="https://www.youtube.com/" class="youtube"><i class="fa fa-youtube"></i></a>
+    </div>
+
+    <!-- icon bar end-->
+
+
+    <!-- move mouse star -->
+    <script src="./js/mouse-move-home.js"></script>
+    <script>
+        function Particle(x, y, radius) {
+            this.init(x, y, radius);
+        }
+
+        Particle.prototype = {
+
+            init: function (x, y, radius) {
+
+                this.alive = true;
+
+                this.radius = radius || 10;
+                this.wander = 0.15;
+                this.theta = random(TWO_PI);
+                this.drag = 0.92;
+                this.color = '#fff';
+
+                this.x = x || 0.0;
+                this.y = y || 0.0;
+
+                this.vx = 0.0;
+                this.vy = 0.0;
+            },
+
+            move: function () {
+
+                this.x += this.vx;
+                this.y += this.vy;
+
+                this.vx *= this.drag;
+                this.vy *= this.drag;
+
+                this.theta += random(-0.5, 0.5) * this.wander;
+                this.vx += sin(this.theta) * 0.1;
+                this.vy += cos(this.theta) * 0.1;
+
+                this.radius *= 0.96;
+                this.alive = this.radius > 0.5;
+            },
+
+            draw: function (ctx) {
+
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, TWO_PI);
+                ctx.fillStyle = this.color;
+                ctx.fill();
             }
+        };
+        var MAX_PARTICLES = 280;
+        var COLOURS = ['#69D2E7', '#A7DBD8', '#E0E4CC', '#F38630', '#FA6900', '#FF4E50', '#F9D423'];
 
-            Particle.prototype = {
+        var particles = [];
+        var pool = [];
 
-                init: function (x, y, radius) {
+        var demo = Sketch.create({
+            container: document.getElementById('container'),
+            retina: 'auto'
+        });
 
-                    this.alive = true;
+        demo.setup = function () {
+            var i, x, y;
 
-                    this.radius = radius || 10;
-                    this.wander = 0.15;
-                    this.theta = random(TWO_PI);
-                    this.drag = 0.92;
-                    this.color = '#fff';
+            for (i = 0; i < 20; i++) {
+                x = (demo.width * 0) + random(-100, 100);
+                y = (demo.height * 0) + random(-100, 100);
+                demo.spawn(x, y);
+            }
+        };
 
-                    this.x = x || 0.0;
-                    this.y = y || 0.0;
+        demo.spawn = function (x, y) {
 
-                    this.vx = 0.0;
-                    this.vy = 0.0;
-                },
+            var particle, theta, force;
 
-                move: function () {
+            if (particles.length >= MAX_PARTICLES)
+                pool.push(particles.shift());
 
-                    this.x += this.vx;
-                    this.y += this.vy;
+            particle = pool.length ? pool.pop() : new Particle();
+            particle.init(x, y, random(5, 40));
 
-                    this.vx *= this.drag;
-                    this.vy *= this.drag;
+            particle.wander = random(0.5, 2.0);
+            particle.color = random(COLOURS);
+            particle.drag = random(0.9, 0.99);
 
-                    this.theta += random(-0.5, 0.5) * this.wander;
-                    this.vx += sin(this.theta) * 0.1;
-                    this.vy += cos(this.theta) * 0.1;
+            theta = random(TWO_PI);
+            force = random(2, 8);
 
-                    this.radius *= 0.96;
-                    this.alive = this.radius > 0.5;
-                },
+            particle.vx = sin(theta) * force;
+            particle.vy = cos(theta) * force;
 
-                draw: function (ctx) {
+            particles.push(particle);
+        };
 
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, this.radius, 0, TWO_PI);
-                    ctx.fillStyle = this.color;
-                    ctx.fill();
+        demo.update = function () {
+
+            var i, particle;
+
+            for (i = particles.length - 1; i >= 0; i--) {
+
+                particle = particles[i];
+
+                if (particle.alive) particle.move();
+                else pool.push(particles.splice(i, 1)[0]);
+            }
+        };
+
+        demo.draw = function () {
+
+            demo.globalCompositeOperation = 'lighter';
+
+            for (var i = particles.length - 1; i >= 0; i--) {
+                particles[i].draw(demo);
+            }
+        };
+
+        demo.mousemove = function () {
+
+            var particle, theta, force, touch, max, i, j, n;
+
+            for (i = 0, n = demo.touches.length; i < n; i++) {
+
+                touch = demo.touches[i], max = random(1, 4);
+                for (j = 0; j < max; j++) {
+                    demo.spawn(touch.x, touch.y);
                 }
-            };
-            var MAX_PARTICLES = 280;
-            var COLOURS = ['#69D2E7', '#A7DBD8', '#E0E4CC', '#F38630', '#FA6900', '#FF4E50', '#F9D423'];
 
-            var particles = [];
-            var pool = [];
+            }
+        };
 
-            var demo = Sketch.create({
-                container: document.getElementById('container'),
-                retina: 'auto'
-            });
+    </script>
 
-            demo.setup = function () {
-                var i, x, y;
+    <!-- move mouse end -->
 
-                for (i = 0; i < 20; i++) {
-                    x = (demo.width * 0) + random(-100, 100);
-                    y = (demo.height * 0) + random(-100, 100);
-                    demo.spawn(x, y);
-                }
-            };
+    <!-- footer star -->
+    <footer id="sticky">&copy&nbspSaMeR 2019</footer>
+    <!-- footer end -->
 
-            demo.spawn = function (x, y) {
-
-                var particle, theta, force;
-
-                if (particles.length >= MAX_PARTICLES)
-                    pool.push(particles.shift());
-
-                particle = pool.length ? pool.pop() : new Particle();
-                particle.init(x, y, random(5, 40));
-
-                particle.wander = random(0.5, 2.0);
-                particle.color = random(COLOURS);
-                particle.drag = random(0.9, 0.99);
-
-                theta = random(TWO_PI);
-                force = random(2, 8);
-
-                particle.vx = sin(theta) * force;
-                particle.vy = cos(theta) * force;
-
-                particles.push(particle);
-            };
-
-            demo.update = function () {
-
-                var i, particle;
-
-                for (i = particles.length - 1; i >= 0; i--) {
-
-                    particle = particles[i];
-
-                    if (particle.alive) particle.move();
-                    else pool.push(particles.splice(i, 1)[0]);
-                }
-            };
-
-            demo.draw = function () {
-
-                demo.globalCompositeOperation = 'lighter';
-
-                for (var i = particles.length - 1; i >= 0; i--) {
-                    particles[i].draw(demo);
-                }
-            };
-
-            demo.mousemove = function () {
-
-                var particle, theta, force, touch, max, i, j, n;
-
-                for (i = 0, n = demo.touches.length; i < n; i++) {
-
-                    touch = demo.touches[i], max = random(1, 4);
-                    for (j = 0; j < max; j++) {
-                        demo.spawn(touch.x, touch.y);
-                    }
-
-                }
-            };
-
-        </script>
 
 
 </body>
