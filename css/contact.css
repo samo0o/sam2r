@@ -4,6 +4,7 @@ body,html{
   
 }
 
+/* nav star */
 .nav
 {
     font-family: Raleway;
@@ -80,6 +81,8 @@ div.nav a:before, div.nav a:after
     opacity: 1;
     width: 100%;
 }
+/* nav end  */
+
 /* icon bar */
 .icon-bar {
     position: fixed;
@@ -149,8 +152,9 @@ div.nav a:before, div.nav a:after
     margin-left: 10px;
     font-size: 30px;
   }
+  /* icon bae end  */
 
-  /* samer */
+  /* samer star*/
 .sa{
     position: absolute;
     top:10%;
@@ -161,6 +165,8 @@ div.nav a:before, div.nav a:after
     color: black;
     font-family: 'Lato', sans-serif;
   }
+  /* samer end  */
+
   /* contact form */
 .contact {
     background: white;
@@ -291,9 +297,19 @@ div.nav a:before, div.nav a:after
     background: #cd6302;
     color: white;
   }
+  /* contact form error star */
+  #status{
+    color: #bb0000;
+    display: block;
+    position: relative;
+    bottom:2.1em;
+  }
+  /* contact form error end  */
+  /* contat end  */
+
+
+
   /*  footer */
-
-
 #sticky {
   width:100%;
   padding:20px;
@@ -303,11 +319,9 @@ div.nav a:before, div.nav a:after
   font-weight:bold;
   font-size:18px;
   text-align:center;
-  position:fixed;    /*Here's what sticks it*/
-  bottom:0;          /*to the bottom of the body*/
-  left:0;            /*and to the left of the body.*/
-  
-  /*EFFECTS*/
+  position:fixed;
+  bottom:0;
+  left:0;
   border-top:1px solid whitesmoke;
   background-image:url(http://rs257.pbsrc.com/albums/hh234/tfm448/Snow411.gif~c200)
 }
