@@ -28,15 +28,27 @@ body,html{
   
 }
 /*  logo  */
-.sa {
+
+.logo {
   position: fixed;
   top: 50%;
   text-decoration: none;
   text-align: center;
   width: 99%;
   font-size: 4em;
-  color: white;
+  -webkit-perspective: 250px;
+  perspective: 250px;
+  display: inline-block;
+  font-family: Roboto, Impact;
+  font-size: 5em;
+  font-weight: bold;
+  text-decoration: none;
+  letter-spacing: -.05em;
 }
+.logo span { display: inline-block; }
+.m1 { color: #FF1493; 
+     padding:20px;}
+.m2 { color: white; }
 
 
 /* Nav */
@@ -47,7 +59,7 @@ body,html{
   left: 0;
   font-family: Raleway;
   text-align: center;
-  padding: .6em;
+  padding: .8em;
     
     
 }
@@ -62,8 +74,6 @@ body,html{
     position: relative;
     z-index: 0;
     cursor: pointer;
-
-
 }
 div.nav a:before, div.nav a:after
 {
@@ -191,3 +201,4 @@ div.nav a:before, div.nav a:after
     margin-left: 1vh;
     font-size: 2vh;
   }
+  
