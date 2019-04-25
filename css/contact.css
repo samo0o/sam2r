@@ -1,6 +1,7 @@
 body,html{
   padding: 0;
   margin:0;
+  
 }
 
 .nav
@@ -226,7 +227,7 @@ div.nav a:before, div.nav a:after
     text-transform: uppercase;
   }
   form .field input[type="text"]#msg, form .field textarea#msg {
-    height:.3em;
+    height:1.5em;
     resize: none;
     -webkit-transition: all 333ms ease-in-out;
     -moz-transition: all 333ms ease-in-out;
@@ -241,7 +242,7 @@ div.nav a:before, div.nav a:after
     padding-bottom: 150px;
   }
   form .field input[type="text"]:focus + label, form .field textarea:focus + label, form .field input[type="text"].focused + label, form .field textarea.focused + label {
-    width: 20%;
+    width: 18%;
     background: #fd9638;
     color: #313a3d;
   }
@@ -271,12 +272,42 @@ div.nav a:before, div.nav a:after
     -ms-transition: all 333ms ease-in-out;
     transition: all 333ms ease-in-out;
   }
-  form input[type="submit"]:hover {
+
+  form button{
+    height: 3em;
+    width: 6em;
+    border-radius: .5em;
+    background: #313a3d;
+    color: black;
+    font-size: 1.1em;
+    
+  }
+  form button[type="submit"]:hover {
     background: #313a3d;
     color: #fd9638;
   }
-  form input[type="submit"]:focus {
+  form button[type="submit"]:focus {
     outline: none;
     background: #cd6302;
+    color: white;
   }
+  /*  footer */
+
+
+#sticky {
+  width:100%;
+  padding:20px;
+  padding-bottom:16px;
+  background:black;
+  color:white;
+  font-weight:bold;
+  font-size:18px;
+  text-align:center;
+  position:fixed;    /*Here's what sticks it*/
+  bottom:0;          /*to the bottom of the body*/
+  left:0;            /*and to the left of the body.*/
   
+  /*EFFECTS*/
+  border-top:1px solid whitesmoke;
+  background-image:url(http://rs257.pbsrc.com/albums/hh234/tfm448/Snow411.gif~c200)
+}
