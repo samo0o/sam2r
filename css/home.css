@@ -1,7 +1,7 @@
 @import 'https://fonts.googleapis.com/css?family=Raleway';
 
 
-/*  body and videos */
+/*  body */
 
 body,html{
   display: block;
@@ -15,6 +15,8 @@ body,html{
   font-family: 'Play', sans-serif;
 }
 
+/* video */
+
 #video-background {
   display: block;
   position:fixed;
@@ -25,6 +27,7 @@ body,html{
   top:0;
   right: 0;
   left: 0;
+  
   
 }
 /*  logo  */
@@ -202,3 +205,18 @@ div.nav a:before, div.nav a:after
     font-size: 2vh;
   }
   
+  /* footer */
+  
+#sticky {
+  width:100%;
+  padding:20px;
+  padding-bottom:16px;
+  color:white;
+  font-weight:bold;
+  font-size:18px;
+  text-align:center;
+  position:fixed;   
+  bottom:0;         
+  left:0;
+  background-image:url(http://rs257.pbsrc.com/albums/hh234/tfm448/Snow411.gif~c200);
+}
