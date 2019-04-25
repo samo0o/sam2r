@@ -5,27 +5,32 @@ $(document).ready(function () {
         var name = $('.name').val();
         var email = $('.email').val();
         var message = $('.message').val();
-        var stateElm = $('.status');
-        stateElm.empty()
+        var stateNam = $('.status-nam');
+        var stateEmi = $('.status-emi');
+        var stateMsg = $('.status-msg')
+        stateNam.empty();
+        stateEmi.empty();
+        stateMsg.empty();
+
 
         if (name.length >= 2) {
-            stateElm.append('<div>name is  valid</div>')
+            stateNam.append();
         } else {
             event.preventDefault();
-            stateElm.append('<div>name is not valid</div>')
+            stateNam.append('<div><h4> Name is not valid </h4></div>');
         };
 
         if (email.length >= 5 && email.includes('@') && email.includes('.')) {
-            stateElm.append('<div>Email is valid</div>')
+            stateEmi.append();
         } else {
             event.preventDefault();
-            stateElm.append('<div>Email is not valid</div>')
+            stateEmi.append('<div><h4> Email is not valid </h4></div>');
         };
         if (message.length >= 10) {
-            stateElm.append('<div>masseg is valid</div>')
+            stateMsg.append();
         } else {
             event.preventDefault();
-            stateElm.append('<div>masseg is not valid</div>')
+            stateMsg.append('<div><h4> Masseg is not valid </h4></div>');
         };
 
 
