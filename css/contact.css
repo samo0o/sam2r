@@ -310,14 +310,13 @@ div.nav a:before, div.nav a:after
   /* contat end  */
   /*  footer */
   #sticky {
-    padding:20px;
+   padding:20px;
   padding-bottom:16px;
   background:black;
   color:white;
   font-weight:bold;
   font-size:18px;
   text-align:center;
-  position: -webkit-sticky;
   bottom:0;
   left:0;
   right: 0;
